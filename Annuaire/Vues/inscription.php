@@ -64,7 +64,17 @@
  
          
           <legend>Inscription</legend>
-
+           <div class="form-group">
+            <label class="col-sm-2 control-label" for="nom">Pseudo:</label>
+            <div class="col-sm-4">
+              <input name="pseudo" id="pseudo" type="text" required="" placeholder="Votre pseudo" class="form-control">
+            </div>
+            <label class="col-sm-2 control-label" for="nom">Password:</label>
+            <div class="col-sm-4">
+              <input name="mdp" id="mdp" type="password" required="" placeholder="mot de passe" class="form-control">
+           </div>
+            </div>
+          
           <div class="form-group">
             <label class="col-sm-2 control-label" for="nom">Nom:</label>
             <div class="col-sm-4">
@@ -119,8 +129,6 @@
             <div class="col-sm-4">
               <input name="tel" class="form-control input-md" id="tel" required="" type="text" placeholder="Téléphone">
             </div>
-
-            
 
 
 
