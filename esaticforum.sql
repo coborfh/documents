@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 25 Juillet 2016 à 15:20
--- Version du serveur :  10.1.9-MariaDB
--- Version de PHP :  5.6.15
+-- Généré le :  Jeu 28 Juillet 2016 à 01:32
+-- Version du serveur :  10.1.13-MariaDB
+-- Version de PHP :  7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -38,7 +38,9 @@ CREATE TABLE `etudiant` (
   `email` varchar(100) NOT NULL,
   `tel` varchar(25) NOT NULL,
   `photo` varchar(500) NOT NULL,
-  `description` varchar(500) NOT NULL
+  `description` varchar(500) NOT NULL,
+  `pseudo` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
