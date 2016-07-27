@@ -1,0 +1,440 @@
+/* #####################################################################
+   #
+   #   Project       : Modal Login with jQuery Effects
+   #   Author        : Rodrigo Amarante (rodrigockamarante)
+   #   Version       : 1.0
+   #   Created       : 07/28/2015
+   #   Last Change   : 08/02/2015
+   #
+   ##################################################################### */
+   
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#login-modal .modal-dialog {
+    width: 350px;
+}
+
+#login-modal input[type=text], input[type=password] {
+	margin-top: 10px;
+}
+
+#div-login-msg,
+#div-lost-msg,
+#div-register-msg {
+    border: 1px solid #dadfe1;
+    height: 30px;
+    line-height: 28px;
+    transition: all ease-in-out 500ms;
+}
+
+#div-login-msg.success,
+#div-lost-msg.success,
+#div-register-msg.success {
+    border: 1px solid #68c3a3;
+    background-color: #c8f7c5;
+}
+
+#div-login-msg.error,
+#div-lost-msg.error,
+#div-register-msg.error {
+    border: 1px solid #eb575b;
+    background-color: #ffcad1;
+}
+
+#icon-login-msg,
+#icon-lost-msg,
+#icon-register-msg {
+    width: 30px;
+    float: left;
+    line-height: 28px;
+    text-align: center;
+    background-color: #dadfe1;
+    margin-right: 5px;
+    transition: all ease-in-out 500ms;
+}
+
+#icon-login-msg.success,
+#icon-lost-msg.success,
+#icon-register-msg.success {
+    background-color: #68c3a3 !important;
+}
+
+#icon-login-msg.error,
+#icon-lost-msg.error,
+#icon-register-msg.error {
+    background-color: #eb575b !important;
+}
+
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+/* #########################################
+   #    override the bootstrap configs     #
+   ######################################### */
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .8;
+}
+
+.modal-content {
+    background-color: #ececec;
+    border: 1px solid #bdc3c7;
+    border-radius: 0px;
+    outline: 0;
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px 15px 15px 15px;
+    border-bottom: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-footer {
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    border-top: 0px;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+    border-radius: 0px;
+}
+
+.btn-link {
+    padding: 5px 10px 0px 0px;
+    color: #95a5a6;
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.glyphicon {
+    top: 0px;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+
+
+
+
+
+
+    -------------------------------------------------------------------------------------------------
+    Multimenu
+
+
+    /*
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+*/
+
+.navbar-brand { position: relative; z-index: 2; }
+
+.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+
+.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
+
+.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
+.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
+.nav-collapse>li { float: right; }
+
+.btn.btn-circle { border-radius: 50px; }
+.btn.btn-outline { background-color: transparent; }
+
+.navbar-nav.navbar-right .btn:not(.collapsed) {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}
+
+.navbar.navbar-default .nav-collapse,
+.navbar.navbar-inverse .nav-collapse {
+    height: auto !important;
+    transition: transform 0.3s;
+    transform: translate(0px,-50px);
+}
+.navbar.navbar-default .nav-collapse.in,
+.navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px,0px);
+}
+
+
+@media screen and (max-width: 767px) {
+    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
+    
+    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+    .navbar .nav-collapse .navbar-form { margin: 0; }
+    .nav-collapse>li { float: none; }
+    
+    .navbar.navbar-default .nav-collapse,
+    .navbar.navbar-inverse .nav-collapse {
+        transform: translate(-100%,0px);
+    }
+    .navbar.navbar-default .nav-collapse.in,
+    .navbar.navbar-inverse .nav-collapse.in {
+        transform: translate(0px,0px);
+    }
+    
+    .navbar.navbar-default .nav-collapse.slide-down,
+    .navbar.navbar-inverse .nav-collapse.slide-down {
+        transform: translate(0px,-100%);
+    }
+    .navbar.navbar-default .nav-collapse.in.slide-down,
+    .navbar.navbar-inverse .nav-collapse.in.slide-down {
+        transform: translate(0px,0px);
+    }
+}
+
+
+-------------------------------------------------------------------------------------
+
+
+body{
+    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+    padding:50px;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+---------------------------------------------------------------------
+test
+
+
+/* USER PROFILE PAGE */
+ .card {
+    margin-top: 20px;
+    padding: 30px;
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-border-top-left-radius:5px;
+    -moz-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+}
+.card.hovercard .card-background {
+    height: 130px;
+}
+.card-background img {
+    -webkit-filter: blur(25px);
+    -moz-filter: blur(25px);
+    -o-filter: blur(25px);
+    -ms-filter: blur(25px);
+    filter: blur(25px);
+    margin-left: -100px;
+    margin-top: -200px;
+    min-width: 130%;
+}
+.card.hovercard .useravatar {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+}
+.card.hovercard .useravatar img {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+.card.hovercard .card-info {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+}
+.card.hovercard .card-info .card-title {
+    padding:0 5px;
+    font-size: 20px;
+    line-height: 1;
+    color: #262626;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.card.hovercard .card-info {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+}
+.card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+}
+.btn-pref .btn {
+    -webkit-border-radius:0 !important;
+}
+
+ a{
+    text-decoration: none;
+    color: black;
+}
+a :hover{
+    color: black;
+}
+
+.test{
+    margin-left: 43%;
+}
+
+.roundedImage{
+    overflow: hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+
+}
+
+.test2 {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  width: 350px;
+  margin-left: 50px
+}
+
+.test1 {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+  width: 350px;
+  height: 70px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.test4{
+    margin-left: 36%;
+}
+
+.well2 {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+         
+}
