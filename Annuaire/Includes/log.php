@@ -18,7 +18,7 @@
                 <form class="form-signin" action="#">
                 <!-- <div class="col-md-10"> -->
                 <div class="form-group">
-                    <input type="text" class="form-control input-md" placeholder="Email" required autofocus />
+                    <input type="text" class="form-control input-md" placeholder="Pseudo" required autofocus />
                 </div>
                 <!-- </div> -->
                 <div class="form-group">
