@@ -1,3 +1,48 @@
+<?php
+
+try
+{
+$db = new PDO('mysql:host=localhost;dbname=esaticforum', 'root', '');
+}
+catch (Exception $e)
+{
+die('Erreur : ' . $e->getMessage());
+}
+if(isset($_POST['envoyer'])){
+
+
+//champ vide
+
+if (empty($_POST['pseudo']) || empty($_POST['password']) )
+{
+  header("location: ../index.php");
+}
+else //selectionner l'etudiant dans la base de donnees
+{
+  $pseudo = $_POST['pseudo'];
+  $password = $_POST['password'];
+   $reponse = $db->prepare('SELECT * FROM etudiant WHERE pseudo = :pseudo AND password = :password  '); 
+   $reponse->execute(array(
+'pseudo'=>$pseudo,
+'password'=>$password
+    ));
+   $data = $reponse->fetch();
+   //si l'etudiant n'existe pas revenir a la connexion
+   if(!$data){
+    header("location: ../index.php");
+
+   }
+   else{
+            session_start();
+             $_SESSION['pseudo'] = $pseudo;
+             $_SESSION['id'] = $data['id_etudiant'];
+
+       echo '<p><strong>Bienvenue '.$pseudo.', vous êtes maintenant connecté!</strong></p>';
+     }
+   }
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
