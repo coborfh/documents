@@ -11,38 +11,85 @@ die('Erreur : ' . $e->getMessage());
 if(isset($_POST['envoyer'])){
 
 
-//champ vide
+                //champ vide
 
-if (empty($_POST['pseudo']) || empty($_POST['password']) )
-{
-  header("location: ../index.php");
-}
-else //selectionner l'etudiant dans la base de donnees
-{
-  $pseudo = $_POST['pseudo'];
-  $password = $_POST['password'];
-   $reponse = $db->prepare('SELECT * FROM etudiant WHERE pseudo = :pseudo AND password = :password  '); 
-   $reponse->execute(array(
-'pseudo'=>$pseudo,
-'password'=>$password
-    ));
-   $data = $reponse->fetch();
-   //si l'etudiant n'existe pas revenir a la connexion
-   if(!$data){
-    header("location: ../index.php");
+                if (empty($_POST['pseudo']) || empty($_POST['password']) )
+                {
+                  header("location: ../index.php");
+                }
+                else //selectionner l'etudiant dans la base de donnees
+                {
+                  $pseudo = $_POST['pseudo'];
+                  $password = $_POST['password'];
+                   $reponse = $db->prepare('SELECT * FROM etudiant WHERE pseudo = :pseudo AND password = :password  '); 
+                   $reponse->execute(array(
+                'pseudo'=>$pseudo,
+                'password'=>$password
+                    ));
+                   $data = $reponse->fetch();
+                   //si l'etudiant n'existe pas revenir a la connexion
+                   if(!$data){
+                    header("location: ../index.php");
 
-   }
-   else{
-            session_start();
-             $_SESSION['pseudo'] = $pseudo;
-             $_SESSION['id'] = $data['id_etudiant'];
+                   }
+                   else{
+                            session_start();
+                             $_SESSION['pseudo'] = $pseudo;
+                             $_SESSION['id'] = $data['id_etudiant'];
 
-       echo '<p><strong>Bienvenue '.$pseudo.', vous êtes maintenant connecté!</strong></p>';
-     }
-   }
+                       echo '<p><strong>Bienvenue '.$pseudo.', vous êtes maintenant connecté!</strong></p>';
+                     }
+                   }
         }
 
+elseif(isset($_POST['suivant'])){
+
+  //On vérifie que l'utilisateur a bien envoyé les informations demandées 
+          if(!empty($_POST["nom"]) || !empty($_POST["prenom"]) || !empty($_POST["mail1"]) ||  !empty($_POST["pseudo"]) || !empty($_POST["password"])|| !empty($_POST["tel"]) || !empty($_POST["sex"]) || !empty($_POST["lieu"])){
+
+                  $pseudo = $_POST['pseudo'];
+                  $password = $_POST['mdp'];
+                  $nom = $_POST['nom'];
+                  $prenom = $_POST['prenom'];
+                  $mail = $_POST['mail1'];
+                  $tel = $_POST['tel'];
+                  $sex = $_POST['sex'];
+
+
+
+                  $stmt = $db->prepare('SELECT 1 FROM etudiant WHERE pseudo = :pseudo');
+                          $stmt->execute(['pseudo' => $_POST['pseudo']]);
+                          if (FALSE !== $stmt->fetchColumn()) {
+                              $errors = "Ce pseudonyme est déjà utilisé";
+                            }
+                            else{
+
+                                   
+                                    //Puis on stock le résultat dans la base de données :
+                                    $query = $db->prepare('INSERT INTO etudiant (nom, prenom,  sexe, email, tel, pseudo, password) VALUES(:nom, :prenom,  :sexe, :email, :tel, :pseudo, :password);');
+                                    $query->bindParam(':nom', $_POST["nom"]);
+                                    $query->bindParam(':prenom', $_POST["prenom"]);
+                                    $query->bindParam(':sexe', $_POST["sex"]);
+                                    $query->bindParam(':email', $_POST["mail1"]);
+                                    $query->bindParam(':tel', $_POST['tel']);
+                                    $query->bindParam(':pseudo', $_POST['pseudo']);
+                                    $query->bindParam(':password', $_POST['mdp']);
+                                    $query->execute();
+                                     session_start();
+                                     $_SESSION['pseudo'] = $pseudo;
+                                     echo '<p><strong>Bienvenue '.$pseudo.', vous êtes maintenant connecté!</strong></p>';
+
+                                     
+                                }
+
+
+             }
+
+
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
