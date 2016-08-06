@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Xeon | OnePage Responsive Theme</title>
+    <title>ANNUAIRE</title>
     <link href="css-insc/bootstrap.min.css" rel="stylesheet">
     <link href="css-insc/font-awesome.min.css" rel="stylesheet">
     <link href="css-insc/prettyPhoto.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 <center>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <form class="form-horizontal" role="form" action="include/var_session.php" method="post" enctype="multipart/form-data">
+      <form class="form-horizontal" role="form" action="other.php" method="post" enctype="multipart/form-data">
         
  
          
@@ -88,18 +88,8 @@
           </div>
 
 
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="naissance">Naissance:</label>
-            <div class="col-sm-4">
-              
-              <input name="naissance" class="form-control" id="naissance" required="" type="date">
-            </div>
-
-            <label class="col-sm-2 control-label" for="lieu" id="lieu">Lieu:</label>
-            <div class="col-sm-4">
-              <input name="lieu" id="lieu" type="text" required="" placeholder="Lieu de naissance" class="form-control">
-            </div>
-          </div>
+            
+          
 
           <div class="form-group">
             <label class="col-sm-2 control-label" for="mail1">E-mail</label>
@@ -108,20 +98,9 @@
             </div>
           </div>
 
-<div class="form-group">
-            <label class="col-sm-2 control-label" for="mail2">Ressaisir E-mail</label>
-            <div class="col-sm-10">
-              <input name="mail2" class="form-control input-md" id="mail2" required="" type="email" placeholder="Ressaisir email">
-            </div>
-          </div>
 
 
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="adre">Adresse</label>
-            <div class="col-sm-10">
-              <input name="adre" type="text" placeholder="Votre adresse" class="form-control">
-            </div>
-          </div>
+          
 
          
           <div class="form-group">
@@ -151,7 +130,7 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <div class="pull-right">
-                <button class="btn btn-default">Annuler</button>
+               <a href="../index.php"> <button class="btn btn-default">Annuler</button></a>
                 <a href=""><button name="suivant" id="suivant" class="btn btn-primary">Suivant</button></a>
               </div>
             </div>
@@ -178,18 +157,6 @@
             <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
             <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
           </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <p>&copy; 2014 Oxygen Theme.</p>
-          </div>
-          <div class="col-sm-6">
-            <p class="pull-right">Designed by <a href="http://www.themeum.com/">Themeum</a></p>
-          </div>
         </div>
       </div>
     </div>

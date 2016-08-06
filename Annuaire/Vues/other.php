@@ -97,7 +97,7 @@ elseif(isset($_POST['suivant'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Oxygen - One Page HTML Template | Themeum</title>
+  <title>ANNUAIRE</title>
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/animate.min.css" rel="stylesheet">
   <link href="Includes/log.css" rel="stylesheet"> 
@@ -136,8 +136,8 @@ elseif(isset($_POST['suivant'])){
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">                 
             <li class="scroll active"><a href="#home">Forum</a></li>
-            <li class="scroll"><a href="#services">Annuaire</a></li> 
-            <li class="scroll"><a href="#about-us">Deconnexion</a></li>                           
+            <li class="scroll"><a href="annuaire.php">Annuaire</a></li> 
+            <li class="scroll"><a href="decon.php">Deconnexion</a></li>                           
           </ul>
         </div>
       </div>
@@ -149,8 +149,7 @@ elseif(isset($_POST['suivant'])){
       <div class="container">
         <div class="row">
           <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <h2>Contact Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</p>
+            <h2>Connexion</h2>
           </div>
         </div>
         <div class="contact-form wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
